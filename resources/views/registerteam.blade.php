@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if(session()->get('success'))
+   <div class="alert alert-success">
+    <strong> {{ session()->get('success') }}  </strong>
+   </div>'
+ @endif
 @if ($errors->any())
 <div class="alert alert-danger">
   <ul>
@@ -19,16 +24,16 @@
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-6 control-label" for="name">Name</label>  
+      <label class="col-md-6 control-label" for="name">Name</label>
       <div class="col-md-6">
         <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md" required="">
 
       </div>
     </div>
  <!-- Text input-->
- 
+
        <div class="form-group">
-      <label class="col-md-6 control-label" for="phone">Phone</label>  
+      <label class="col-md-6 control-label" for="phone">Phone</label>
       <div class="col-md-6">
         <input id="phone" name="phone" type="text"  placeholder="Phone Number" class="form-control input-md" required="">
 
@@ -37,7 +42,7 @@
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-6 control-label" for="email">Email</label>  
+      <label class="col-md-6 control-label" for="email">Email</label>
       <div class="col-md-6">
         <input id="desc" name="email" type="text"  placeholder="Email" class="form-control input-md" required="">
 
@@ -45,7 +50,7 @@
     </div>
 
   <div class="form-group">
-      <label class="col-md-6 control-label" for="uni">University</label>  
+      <label class="col-md-6 control-label" for="uni">University</label>
       <div class="col-md-6">
         <input id="uni" name="uni" type="text"  placeholder="University" class="form-control input-md" required="">
 
@@ -54,24 +59,24 @@
 
 
   <div class="form-group">
-      <label class="col-md-6 control-label" for="team_name">Team Name</label>  
+      <label class="col-md-6 control-label" for="team_name">Team Name</label>
       <div class="col-md-6">
         <input id="team_name" name="team_name" type="text"  placeholder="Team Name" class="form-control input-md" required="">
 
       </div>
     </div>
-     
+
      <div class="form-group">
-      <label class="col-md-6 control-label" for="project_name">Project Name</label>  
+      <label class="col-md-6 control-label" for="project_name">Project Name</label>
       <div class="col-md-6">
         <input id="team_name" name="project_name" type="text"  placeholder="Project Name" class="form-control input-md" required="">
 
       </div>
     </div>
-     
+
 
      <div class="form-group">
-      <label class="col-md-6 control-label" for="super_name">Supervisor Name</label>  
+      <label class="col-md-6 control-label" for="super_name">Supervisor Name</label>
       <div class="col-md-6">
         <input id="super_name" name="super_name" type="text"  placeholder="Supervisor Name" class="form-control input-md" required="">
 

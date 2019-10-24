@@ -12,7 +12,7 @@
                         {{ session('status') }}
                     </div>
                     @endif
- 
 
-          
+
+
  @endsection
