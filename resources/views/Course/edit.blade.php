@@ -13,7 +13,7 @@
                 @endforeach
             </ul>
         </div>
-        <br /> 
+        <br />
         @endif
 
 
@@ -24,15 +24,15 @@
             <div class="form-group">
 
                 <label for="course_name">Course Name:</label>
-                <input type="text" class="form-control" name="course_name" value={{ $course->course_name }} />
+                <input type="text" class="form-control" name="course_name" value="{{ $course->course_name }}" />
             </div>
 
 
             <div class="form-group">
                 <label for="desc">Description:</label>
-                <input type="text" class="form-control" name="desc" value={{ $course->desc }} />
+                <input type="text" class="form-control" name="desc" value="{{ $course->desc }}" />
             </div>
-           
+
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
