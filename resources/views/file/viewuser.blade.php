@@ -15,7 +15,7 @@
     @csrf
     @method('DELETE')
 	
-		<a href="{{route('downloadfile',$file->id)}}" class="btn btn-primary">Download</a>
+		<a href="{{route('downloadfileUser',$file->id)}}" class="btn btn-primary">Download Here</a>
 	  </form>
 
 	  @endif

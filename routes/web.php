@@ -48,3 +48,4 @@ Route::get('course.enroll/{id}', 'CourseController@enroll');
 Route::post('course.enroll/{id}', 'CourseController@enroll');
 Route::get('/fileUser', "UploadFileController@indexUser");
 Route::get('/file.viewuser/{id}', 'UploadFileController@viewUser');
+Route::get('/fileUser/download/{id}',"UploadFileController@show")->name('downloadfileUser');
