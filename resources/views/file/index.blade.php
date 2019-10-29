@@ -26,8 +26,8 @@
  <p class="card-text" >{{$course->course_name}}</p>
 <a  class="btn btn-primary" type="submit" href="file.upload/{{$course->id}}">Upload Materials</a>
 <a  class="btn btn-primary" type="submit" href="{{route('editcourse',$course->id)}}">Edit Course</a>
-<a  class="btn btn-primary" type="submit" href="{{route('deletecourse',$course->id)}}">Delete Course</a>
 <a  class="btn btn-primary" type="submit"  href = 'file.view/{{ $course->id }}'>View Material </a>
+<a  class="btn btn-danger" type="submit" href="{{route('deletecourse',$course->id)}}">Delete Course</a>
 </div>
 </div>
  @endforeach
@@ -39,6 +39,10 @@
 <br>
 <div>
   <a  class="btn btn-primary" type="submit"  href = 'team.view'>View Registered Team </a>
+</div>
+<br>
+<div>
+  <a  class="btn btn-primary" type="submit"  href = 'user.view'>View Registered Users </a>
 </div>
 @endsection
 

@@ -129,4 +129,9 @@ class CourseController extends Controller {
 		return redirect('/file')->with('success', 'Course deleted!');
 	}
 
+		public function showUsers() {
+	    $users = User::all();
+        return view('viewuser', compact('users'));
+	}
+
 }

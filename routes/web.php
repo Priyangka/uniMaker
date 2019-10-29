@@ -24,11 +24,11 @@ Route::get('logout', 'Auth\LoginController@logout', function () {
 Route::get('/home', 'CourseController@showCourse')->name('home');
 Route::get('team.create', 'TeamController@createTeam')->name('createTeam');
 Route::post('team.store', 'TeamController@store')->name('storeTeam');
+Route::get('user.view', 'CourseController@showUsers')->name('viewuser');
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
 	Route::get('/admin/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
 	Route::post('/admin/login', 'Auth\LoginController@login')->name('admin.login.submit');
-//Route::get('/', 'CourseController@showAdminCourse')->name('admin.dashboard');
 	Route::get('/file', "UploadFileController@index")->name('viewfile');
 	Route::get('file.upload/{id}', "UploadFileController@create");
 	Route::get('course.create', 'CourseController@createCourse')->name('createCourse');
@@ -41,6 +41,10 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 	Route::get('/course.delete/{id}', 'CourseController@destroy')->name('deletecourse');
 	Route::get('/file.view/{id}', 'UploadFileController@view');
 	Route::get('team.view', 'TeamController@index')->name('viewteam');
+	Route::get('teamedit/{id}', 'TeamController@edit')->name('editteam');
+	Route::get('teamshow/{id}', 'TeamController@show')->name('showteam');
+	Route::patch('teamupdate/{id}', 'TeamController@update')->name('updateteam');
+	Route::get('teamdelete/{id}', 'TeamController@destroy')->name('deleteteam');
 });
 
 Route::get('course.mycourse', 'CourseController@showMyCourse')->name('myCourse');
@@ -49,3 +53,4 @@ Route::post('course.enroll/{id}', 'CourseController@enroll');
 Route::get('/fileUser', "UploadFileController@indexUser");
 Route::get('/file.viewuser/{id}', 'UploadFileController@viewUser');
 Route::get('/fileUser/download/{id}',"UploadFileController@show")->name('downloadfileUser');
+
