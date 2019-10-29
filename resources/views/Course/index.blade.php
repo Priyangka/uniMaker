@@ -27,16 +27,6 @@
 
 
 <h5>Course that you are enrolled in: </h5>
-@foreach ($student as $s)
- @if($s->course_id==1)
-<h5>Ideation Concept </h5>
- @elseif($s->course_id==2)
-<h5>Prototype </h5>
- @elseif($s->course_id==3)
-<h5>Pitch Your Invention </h5>
-@endif
- @endforeach
-
 
 
 
