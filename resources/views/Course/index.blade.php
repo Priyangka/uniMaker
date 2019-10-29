@@ -12,14 +12,12 @@
 
 
 
-@foreach ($course as $course)
+@foreach ($listUnenroll as $course)
   <div class="card bg-light">
  <div class="card-body text-center">
- <p class="card-text">{{$course->id}} </p>
  <p class="card-text">{{$course->course_name}} </p>
   <p class="card-text">{{$course->desc}} </p>
-  <!-- <a  class="btn btn-primary" type="submit"  href = 'course.enroll/{{ $course->id }}'>Enroll </a> -->
-  <a  class="btn btn-primary" type="submit">Enroll </a>
+  <a  class="btn btn-primary" type="submit"  href = 'course.enroll/{{ $course->id }}'>Enroll </a>
 <a  class="btn btn-primary" type="submit"  href = 'file.viewuser/{{ $course->id }}'>View Material </a>
 </div>
 </div>
@@ -27,7 +25,16 @@
 
 
 <h5>Course that you are enrolled in: </h5>
-
+@foreach ($listEnroll as $course)
+  <div class="card bg-light">
+ <div class="card-body text-center">
+ <p class="card-text">{{$course->course_name}} </p>
+  <p class="card-text">{{$course->desc}} </p>
+  <a  class="btn btn-primary" type="submit">Unenroll </a>
+<a  class="btn btn-primary" type="submit"  href = 'file.viewuser/{{ $course->id }}'>View Material </a>
+</div>
+</div>
+ @endforeach
 
 
 
