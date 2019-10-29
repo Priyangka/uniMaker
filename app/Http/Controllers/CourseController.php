@@ -18,27 +18,74 @@ class CourseController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function enroll(Request $request, $id) {
-		$course = Course::find($id);
 
-		$name = \Auth::user()->name;
-		$iduser = \Auth::user()->id;
+		$idUser = \Auth::user()->id;
 
-		$data = array("student_name" => $name, "course_id" => $id, "user_id" => $iduser, "course_status" => "Enrolled");
+		$user = User::where('id', $idUser)->first();
+
+		$data = array("student_name" => $user->name, "course_id" => $id, "user_id" => $user->id);
 		DB::table('student')->insert($data);
 
 		return redirect('/home')->with('success', 'Enrolled successfully!');
+
 	}
 
-	//////////////////////////
 	public function showCourse() {
 		$id = \Auth::user()->id;
+
+		$listEnroll = array();
+		$listUnenroll = [];
+		$var = true;
+
+		$selectedId = [];
+		$listCourseId = [];
+
 		$course = Course::all();
-		$student = DB::table('student')->where('user_id', '=', $id)
-			->select('course_id', 'course_status')->get();
+		$student = Student::where('user_id', $id)->get();
 
-		//avoid duplicate data sql
+		foreach ($course as $data) {
 
-		return view('Course.index', compact('course', 'student'));
+			foreach ($student as $stud) {
+
+				if ($data->id == $stud->course_id) {
+
+					$listEnroll[] = $data;
+				}
+			}
+
+		}
+
+		foreach ($course as $key => $data) {
+
+			array_push($listCourseId, $data['id']);
+
+			foreach ($student as $key => $stud) {
+
+				if ($data['id'] == $stud['course_id']) {
+
+					if (!(in_array($data['id'], $selectedId))) {
+
+						$selectedId[] = $data['id'];
+
+					}
+
+				}
+
+			}
+
+		}
+
+		foreach ($listCourseId as $key => $value) {
+
+			if (!in_array($value, $selectedId)) {
+
+				$listUnenroll[] = $course[$key];
+
+			}
+
+		}
+
+		return view('Course.index', compact('listEnroll', 'listUnenroll'));
 
 	}
 
