@@ -24,7 +24,7 @@ Route::get('logout', 'Auth\LoginController@logout', function () {
 Route::get('/home', 'CourseController@showCourse')->name('home');
 Route::get('team.create', 'TeamController@createTeam')->name('createTeam');
 Route::post('team.store', 'TeamController@store')->name('storeTeam');
-Route::get('user.view', 'CourseController@showUsers')->name('viewuser');
+
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
 	Route::get('/admin/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
@@ -45,6 +45,9 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 	Route::get('teamshow/{id}', 'TeamController@show')->name('showteam');
 	Route::patch('teamupdate/{id}', 'TeamController@update')->name('updateteam');
 	Route::get('teamdelete/{id}', 'TeamController@destroy')->name('deleteteam');
+	Route::get('user.view', 'CourseController@showUsers')->name('viewuser');
+Route::get('usershow/{id}', 'CourseController@displayUser')->name('showuser');
+Route::get('deleteuser/{id}', 'CourseController@destroyUser')->name('deleteuser');
 });
 
 Route::get('course.mycourse', 'CourseController@showMyCourse')->name('myCourse');

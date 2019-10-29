@@ -47,14 +47,15 @@ class TeamController extends Controller
 	{
 
 		$team = Team::all();
-	
+	 $i=1;
     
-		return view('viewteam', compact('team'));
+		return view('viewteam', compact('team','i'));
 	}
 
 public function show($id)
     {
         $team = Team::find($id);
+        
         return view('showteam', compact('team')); 
     }
 

@@ -39,7 +39,8 @@
 @foreach($team as $team)
 
 <tr>
-	<td>{{$team->id}}</td>
+	  
+	<td>{{$i++}}</td>
 	<td>{{$team->name}}</td>
 	<td>{{$team->phone}}</td>
 	<td>{{$team->email}}</td>

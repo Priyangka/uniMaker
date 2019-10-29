@@ -178,7 +178,22 @@ class CourseController extends Controller {
 
 		public function showUsers() {
 	    $users = User::all();
-        return view('viewuser', compact('users'));
+	    $i=1;
+        return view('viewuser', compact('users','i'));
 	}
 
+		public function destroyUser($id) {
+		$users = User::find($id);
+		$users->delete();
+
+		return redirect('user.view')->with('success', 'User deleted!');
+	}
+
+
+public function displayUser($id)
+    {
+        $users = User::find($id);
+       
+        return view('showuser', compact('users')); 
+    }
 }

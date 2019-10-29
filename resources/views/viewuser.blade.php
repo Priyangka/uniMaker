@@ -35,14 +35,19 @@
 @foreach($users as $users)
 @if ($users->role!="admin")
 <tr>
-	<td>{{$users->id}}</td>
+	<td>{{$i++}}</td>
 	<td>{{$users->name}}</td>
 	<td>{{$users->email}}</td>
 	<td>User</td>
-    @endif
+   
 	
-</td>
+<td> <a class="btn btn-primary" type="submit" href="{{route('showuser',$users->id)}}">View</a>	
+<a  class="btn btn-danger" type="submit" href="{{route('deleteuser',$users->id)}}">Delete </a> </td> 
+
+
+ @endif
 </tr>
+
 
 @endforeach
 </table>
