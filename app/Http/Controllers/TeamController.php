@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Team;
+use DataTables;
 
 class TeamController extends Controller
 {
@@ -43,13 +44,11 @@ class TeamController extends Controller
 		return redirect('team.create')->with('success','Team Registered!');
 	}
 
-	public function index()
+	public function index(Request $request)
 	{
-
-		$team = Team::all();
-	 $i=1;
-    
-		return view('viewteam', compact('team','i'));
+       $team = Team::all();
+        $i=1; 
+		 return view('viewteam',compact('team','i'));
 	}
 
 public function show($id)
