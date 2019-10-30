@@ -30,7 +30,7 @@
  <div class="card-body text-center">
  <p class="card-text">{{$course->course_name}} </p>
   <p class="card-text">{{$course->desc}} </p>
-  <a  class="btn btn-primary" type="submit">Unenroll </a>
+  <a  class="btn btn-primary" type="submit"href = 'course.unenroll/{{ $course->id }}' >Unenroll </a>
 <a  class="btn btn-primary" type="submit"  href = 'file.viewuser/{{ $course->id }}'>View Material </a>
 </div>
 </div>

@@ -89,6 +89,17 @@ class CourseController extends Controller {
 
 	}
 
+	public function unenroll(Request $request, $id)
+	{  $userid = \Auth::user()->id;
+		$student = DB::table('student')
+			->where('student.user_id', '=', $userid)
+			->where ('student.course_id','=',$id)
+			->delete();
+
+		return redirect('/home')->with('success', 'Student unenrolled!');
+
+	}
+
 	public function showMyCourse() {
 		$name = \Auth::user()->name;
 
