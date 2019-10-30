@@ -53,6 +53,8 @@ Route::get('deleteuser/{id}', 'CourseController@destroyUser')->name('deleteuser'
 Route::get('course.mycourse', 'CourseController@showMyCourse')->name('myCourse');
 Route::get('course.enroll/{id}', 'CourseController@enroll');
 Route::post('course.enroll/{id}', 'CourseController@enroll');
+Route::get('course.unenroll/{id}', 'CourseController@unenroll');
+Route::delete('course.unenroll/{id}', 'CourseController@unenroll');
 Route::get('/fileUser', "UploadFileController@indexUser");
 Route::get('/file.viewuser/{id}', 'UploadFileController@viewUser');
 Route::get('/fileUser/download/{id}',"UploadFileController@show")->name('downloadfileUser');
