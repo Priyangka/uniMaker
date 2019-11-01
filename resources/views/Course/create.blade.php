@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 @if ($errors->any())
@@ -13,7 +13,7 @@
 <form method="post" action="{{route('storeCourse')}}" class="form-horizontal" >
   @csrf
   <fieldset>
-
+      </fieldset>
     <!-- Form Name -->
     <legend>Create New Course</legend>
 

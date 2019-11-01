@@ -129,7 +129,6 @@ class CourseController extends Controller {
 
 	public function store(Request $request) {
 		$request->validate([
-			// 'id'=>'required',
 
 			'course_name' => 'required',
 			'desc' => 'required',
@@ -161,7 +160,6 @@ class CourseController extends Controller {
 	public function update(Request $request, $id) {
 		$request->validate([
 			'course_name' => 'required',
-
 			'desc' => 'required',
 		]);
 
@@ -180,7 +178,8 @@ class CourseController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function destroy($id) {
+	public function destroy($id) 
+	{
 		$course = Course::find($id);
 		$course->delete();
 

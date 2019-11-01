@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-sm-8 offset-sm-2">
-        <h1 class="display-3">View User Details</h1>
+        <legend>View User Details</legend>
 
         @if(session()->get('success'))
    <div class="alert alert-success">

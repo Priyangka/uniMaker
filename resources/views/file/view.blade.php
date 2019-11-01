@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
- <h1 class="display-5">View Material</h1>
+ <legend>View Material</legend>
 @foreach($file as $file)
 @if ($file->course_id == $id)
 <div class="card">
@@ -20,9 +20,18 @@
 	  </form>
 
 	  @endif
- 
+
 
  
  @endforeach 
- <a href="{{ route('viewfile')}}" class="btn btn-success">Back</a> 
+</div>
+</file>
+</div>
+</div>
+<div>
+	<br>
+	<a href="{{ route('viewfile')}}" class="btn btn-success">Back</a>
+</br>
+	 </div>
+ 
     @endsection

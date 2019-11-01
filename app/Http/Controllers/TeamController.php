@@ -19,7 +19,6 @@ class TeamController extends Controller
 		public function store(Request $request)
 	{
 		$request->validate([
-            // 'id'=>'required',
         'name'=>'required',
         'phone'=>'required',
         'email'=>'required',

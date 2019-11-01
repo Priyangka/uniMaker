@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+
 
 @section('content')
  @if(session()->get('success'))
@@ -7,20 +8,20 @@
     </div>'
   @endif
 
+  <h1>Manage Courses</h1>
   
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8" style="padding: 0">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+
  <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>
                     @endif
-
+<a href="{{route('createCourse')}}" class="btn btn-primary" style="float: right;">Create new Course</a>
+<br>
+</br>
 @foreach($course as $course)
+
   <div class="card bg-light">
  <div class="card-body text-center">
  <p class="card-text" >{{$course->course_name}}</p>
@@ -34,15 +35,9 @@
 
 	<div>
 
-<a href="{{route('createCourse')}}" class="btn btn-primary">Create new Course</a>
+
 </div>
 <br>
-<div>
-  <a  class="btn btn-primary" type="submit"  href = 'team.view'>View Registered Team </a>
-</div>
-<br>
-<div>
-  <a  class="btn btn-primary" type="submit"  href = 'user.view'>View Registered Users </a>
-</div>
+
 @endsection
 
