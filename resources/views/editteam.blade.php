@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="row">
@@ -58,7 +58,8 @@
 
 
             <button type="submit" class="btn btn-primary">Update</button>
-        </form>
+          
+        </form>  <a href="{{ route('viewfile')}}" class="btn btn-success">Back</a>
     </div>
 </div>
 @endsection

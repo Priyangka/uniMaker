@@ -18,7 +18,7 @@
  <p class="card-text">{{$course->course_name}} </p>
   <p class="card-text">{{$course->desc}} </p>
   <a  class="btn btn-primary" type="submit"  href = 'course.enroll/{{ $course->id }}'>Enroll </a>
-<a  class="btn btn-primary" type="submit"  href = 'file.viewuser/{{ $course->id }}'>View Material </a>
+
 </div>
 </div>
  @endforeach
